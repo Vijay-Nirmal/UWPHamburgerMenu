@@ -1,0 +1,91 @@
+﻿<Page
+    x:Class="HamburgerMenu.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HamburgerMenu"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"  
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors" 
+    mc:Ignorable="d">
+    
+    <!--Created and Designed by Vijay Nirmal-->
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <RelativePanel>
+            <Button Name="HamburgerButton" FontSize="16" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" RelativePanel.AlignLeftWithPanel="True" Click="HamBurgerButton_Click"/>
+        </RelativePanel>
+        <SplitView Name="HamburgerMenu" OpenPaneLength="200" CompactPaneLength="48" Grid.Row="1" HorizontalAlignment="Left" DisplayMode="CompactOverlay" PaneBackground="Transparent">
+            <SplitView.Pane>
+                <Grid Name="PaneGrid" Background="Transparent" ManipulationMode="TranslateX" ManipulationCompleted="SplitViewPane_ManipulationCompleted">
+                    <Grid VerticalAlignment="Top" Background="Transparent">
+                        <ListBox Name="HamburgerMenuTopListBox" SelectionMode="Single" Background="Transparent" SelectionChanged="HamburgerMenuListBox_SelectionChanged">
+                            <ListBoxItem Name="HomeListBox">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Home" Width="20" Height="20"/>
+                                    <TextBlock Name="HomeTextBlock" FontSize="16" Text="Home" HorizontalAlignment="Left" Margin="30,0,0,0"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem Name="AdvancedSearchListBox">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Find" Width="20" Height="20"/>
+                                    <TextBlock Name="AdvancedSearchTextBlock" FontSize="16" Text="Advanced Search" Margin="30,0,0,0" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem Name="UploadListBox">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Upload" Width="20" Height="20"/>
+                                    <TextBlock Name="UploadTextBlock" FontSize="16" Text="Upload" Margin="30,0,0,0" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                    <Grid VerticalAlignment="Bottom" Background="Transparent">
+                        <ListBox Name="HamburgerMenuDownListBox" SelectionMode="Single" Background="Transparent" SelectionChanged="HamburgerMenuListBox_SelectionChanged">
+                            <ListBoxItem Name="SignInListBox">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="AddFriend" Width="20" Height="20"/>
+                                    <TextBlock Name="SignInTextBlock" FontSize="16" Text="Sign In" Margin="30,0,0,0" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem Name="SettingsListBox">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Setting" Width="20" Height="20"/>
+                                    <TextBlock Name="SettingsTextBlock" FontSize="16" Text="Settings" Margin="30,0,0,0" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                    <Grid Canvas.ZIndex="-1" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Name="PaneBackgroundGrid" Grid.Column="1">
+                            <interactivity:Interaction.Behaviors>
+                                <behaviors:Blur x:Name="blur" Value="25" Duration="0" Delay="0" AutomaticallyStart="true"/>
+                            </interactivity:Interaction.Behaviors>
+                            <Grid.Background>
+                                <SolidColorBrush Color="Black" Opacity="0.5"/>
+                            </Grid.Background>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <Image Name="ContentImage" Source="Assets/Windows10-official-wallpaper-02.jpg"/>
+                    <Grid ManipulationMode="TranslateX" ManipulationCompleted="SplitViewOpener_ManipulationCompleted" Width="50" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+
+    </Grid>
+</Page>

@@ -1,0 +1,92 @@
+﻿<Page
+    x:Class="HamburgerMenu.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HamburgerMenu"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"  
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors" 
+    mc:Ignorable="d">
+    
+    <!--Created and Designed by Vijay Nirmal-->
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <RelativePanel>
+            <Button x:ConnectionId='19' Name="HamburgerButton" FontSize="16" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" RelativePanel.AlignLeftWithPanel="True"                              />
+        </RelativePanel>
+        <SplitView x:ConnectionId='1' Name="HamburgerMenu" OpenPaneLength="200" CompactPaneLength="48" Grid.Row="1" HorizontalAlignment="Left" DisplayMode="CompactOverlay" PaneBackground="Transparent">
+            <SplitView.Pane>
+                <Grid x:ConnectionId='2' Name="PaneGrid" Background="Transparent" ManipulationMode="TranslateX"                                                            >
+                    <Grid VerticalAlignment="Top" Background="Transparent">
+                        <ListBox x:ConnectionId='10' Name="HamburgerMenuTopListBox" SelectionMode="Single" Background="Transparent"                                                         >
+                            <ListBoxItem x:ConnectionId='11' Name="HomeListBox">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Home" Width="20" Height="20"/>
+                                    <TextBlock x:ConnectionId='16' Name="HomeTextBlock" FontSize="16" Text="Home" HorizontalAlignment="Left" Margin="30,0,0,0"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem x:ConnectionId='12' Name="AdvancedSearchListBox">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Find" Width="20" Height="20"/>
+                                    <TextBlock x:ConnectionId='15' Name="AdvancedSearchTextBlock" FontSize="16" Text="Advanced Search" Margin="30,0,0,0" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem x:ConnectionId='13' Name="UploadListBox">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Upload" Width="20" Height="20"/>
+                                    <TextBlock x:ConnectionId='14' Name="UploadTextBlock" FontSize="16" Text="Upload" Margin="30,0,0,0" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                    <Grid VerticalAlignment="Bottom" Background="Transparent">
+                        <ListBox x:ConnectionId='5' Name="HamburgerMenuDownListBox" SelectionMode="Single" Background="Transparent"                                                         >
+                            <ListBoxItem x:ConnectionId='6' Name="SignInListBox">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="AddFriend" Width="20" Height="20"/>
+                                    <TextBlock x:ConnectionId='9' Name="SignInTextBlock" FontSize="16" Text="Sign In" Margin="30,0,0,0" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem x:ConnectionId='7' Name="SettingsListBox">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Setting" Width="20" Height="20"/>
+                                    <TextBlock x:ConnectionId='8' Name="SettingsTextBlock" FontSize="16" Text="Settings" Margin="30,0,0,0" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                    </Grid>
+                    <Grid Canvas.ZIndex="-1" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid x:ConnectionId='3' Name="PaneBackgroundGrid" Grid.Column="1">
+                            <interactivity:Interaction.Behaviors>
+                                <behaviors:Blur x:ConnectionId='4' x:Name="blur" Value="25" Duration="0" Delay="0" AutomaticallyStart="true"/>
+                            </interactivity:Interaction.Behaviors>
+                            <Grid.Background>
+                                <SolidColorBrush Color="Black" Opacity="0.5"/>
+                            </Grid.Background>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <Image x:ConnectionId='17' Name="ContentImage" Source="Assets/Windows10-official-wallpaper-02.jpg"/>
+                    <Grid x:ConnectionId='18' ManipulationMode="TranslateX"                                                               Width="50" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+
+    </Grid>
+</Page>
+
