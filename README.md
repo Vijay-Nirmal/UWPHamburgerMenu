@@ -2,7 +2,7 @@
 
 UWP Hamburger Menu with Frosted glass effect and Swipe to Open/Close
 
-I used UWPCommunityToolkit(http://www.uwpcommunitytoolkit.com/en/master/) to blur.
+I used [UWPCommunityToolkit](http://www.uwpcommunitytoolkit.com/en/master/) to blur.
 
     <interactivity:Interaction.Behaviors>
         <behaviors:Blur x:Name="BlurBehavior" 
@@ -14,7 +14,7 @@ I used UWPCommunityToolkit(http://www.uwpcommunitytoolkit.com/en/master/) to blu
     
 If you want to increase or decrease the amount of blur then change the value in behaviors
 
-To swipe to open the hamburger menu.
+**To swipe to open the hamburger menu**
 
     private void SplitViewPane_ManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)
     {
@@ -38,11 +38,15 @@ To swipe to open the hamburger menu.
     }
 
 //This Grid should be inside SplitView.Pane
+
     <Grid Name="PaneGrid" Background="Transparent" ManipulationMode="TranslateX" ManipulationCompleted="SplitViewPane_ManipulationCompleted">
 
 //This Grid should be inside SplitView.Content
+
     <Grid ManipulationMode="TranslateX" ManipulationCompleted="SplitViewOpener_ManipulationCompleted" Width="50" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
 
 Contact me
+
 @_Vijay_Nirmal_
+
 https://www.linkedin.com/in/vijay-nirmal
