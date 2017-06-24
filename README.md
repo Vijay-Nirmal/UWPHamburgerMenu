@@ -45,8 +45,8 @@ If you want to increase or decrease the amount of blur then change the value in 
 
     <Grid ManipulationMode="TranslateX" ManipulationCompleted="SplitViewOpener_ManipulationCompleted" Width="50" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
 
-Contact me
+By Vijay Nirmal
 
-@_Vijay_Nirmal_
+https://twitter.com/_Vijay_Nirmal_
 
 https://www.linkedin.com/in/vijay-nirmal
