@@ -37,12 +37,10 @@ If you want to increase or decrease the amount of blur then change the value in 
             }
     }
 
-//This Grid should be inside SplitView.Pane
-
+    //This Grid should be inside SplitView.Pane
     <Grid Name="PaneGrid" Background="Transparent" ManipulationMode="TranslateX" ManipulationCompleted="SplitViewPane_ManipulationCompleted">
 
-//This Grid should be inside SplitView.Content
-
+    //This Grid should be inside SplitView.Content
     <Grid ManipulationMode="TranslateX" ManipulationCompleted="SplitViewOpener_ManipulationCompleted" Width="50" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
 
 By Vijay Nirmal
